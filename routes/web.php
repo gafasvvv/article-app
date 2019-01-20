@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contacts', 'ContactController@index');
+
+Route::group(['prefix' => 'ajax'], function(){
+    Route::resource('contacts', 'Ajax\ContactController',[
+        'only' => ['store']
+    ]);
+});

@@ -17,17 +17,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// 記事一覧
+// ライブ記事一覧
 Route::get('articles', 'ArticleController@index');
 
-//記事詳細
+//ライブ記事詳細
 Route::get('article/{id}', 'ArticleController@show');
 
-//記事新規作成
+//ライブ記事新規作成
 Route::post('article', 'ArticleController@store');
 
-//記事更新
+//ライブ記事更新
 Route::put('article', 'ArticleController@store');
 
-// 記事削除
+//ライブ記事削除
 Route::delete('article/{id}', 'ArticleController@destroy');

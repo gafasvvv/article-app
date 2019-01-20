@@ -1,7 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-info mb-2">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-danger mb-2">
         <div class="container">
-            <a href="#" class="navbar-brand">Article App</a>
+            <a href="/" class="navbar-brand">Waratta!!!</a>
         </div>
     </nav>
 </template>

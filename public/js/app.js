@@ -1802,6 +1802,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -32340,7 +32347,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h2", [_vm._v("記事一覧")]),
+      _c("h2", { staticClass: "text-center" }, [_vm._v("新規登録")]),
       _vm._v(" "),
       _c(
         "form",
@@ -32365,7 +32372,7 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text", placeholder: "タイトル" },
+              attrs: { type: "text", placeholder: "ライブタイトル" },
               domProps: { value: _vm.article.title },
               on: {
                 input: function($event) {
@@ -32389,7 +32396,7 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text", placeholder: "内容" },
+              attrs: { type: "text", placeholder: "ライブ内容" },
               domProps: { value: _vm.article.body },
               on: {
                 input: function($event) {
@@ -32413,6 +32420,8 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
+      _c("h2", { staticClass: "text-center" }, [_vm._v("お笑いライブ情報")]),
+      _vm._v(" "),
       _vm._l(_vm.articles, function(article) {
         return _c(
           "div",
@@ -32424,31 +32433,37 @@ var render = function() {
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-warning mb-2",
-                on: {
-                  click: function($event) {
-                    _vm.editArticle(article)
-                  }
-                }
-              },
-              [_vm._v("編集")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-danger",
-                on: {
-                  click: function($event) {
-                    _vm.deleteArticle(article.id)
-                  }
-                }
-              },
-              [_vm._v("削除")]
-            )
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-6 text-center" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-warning mb-2",
+                    on: {
+                      click: function($event) {
+                        _vm.editArticle(article)
+                      }
+                    }
+                  },
+                  [_vm._v("編集")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6  text-center" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger",
+                    on: {
+                      click: function($event) {
+                        _vm.deleteArticle(article.id)
+                      }
+                    }
+                  },
+                  [_vm._v("削除")]
+                )
+              ])
+            ])
           ]
         )
       }),
@@ -32552,11 +32567,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "nav",
-      { staticClass: "navbar navbar-expand-sm navbar-dark bg-info mb-2" },
+      { staticClass: "navbar navbar-expand-sm navbar-dark bg-danger mb-2" },
       [
         _c("div", { staticClass: "container" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _vm._v("Article App")
+          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+            _vm._v("Waratta!!!")
           ])
         ])
       ]

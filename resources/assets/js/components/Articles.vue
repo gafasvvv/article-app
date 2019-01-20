@@ -1,25 +1,32 @@
 <template>
     <div>
-        <h2>記事一覧</h2>
+        <h2 class="text-center">新規登録</h2>
         <form @submit.prevent="addArticle" class="mb-3">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="タイトル"
+                <input type="text" class="form-control" placeholder="ライブタイトル"
                 v-model="article.title">
             </div>
             <div class="form-group">
-                <textarea type="text" class="form-control" placeholder="内容"
+                <textarea type="text" class="form-control" placeholder="ライブ内容"
                 v-model="article.body"></textarea>
             </div>
             <button type="submit" class="btn btn-light btn-block">投稿</button>
         </form>
+        <h2 class="text-center">お笑いライブ情報</h2>
         <div class="card card-body mb-2" v-for="article in articles" v-bind:key="article.id">
             <h3>{{ article.title }}</h3>
             <p>{{ article.body }}</p>
             <hr>
-            <button @click="editArticle(article)"
-            class="btn btn-warning mb-2">編集</button>
-            <button @click="deleteArticle(article.id)"
-            class="btn btn-danger">削除</button>
+            <div class="row">
+                <div class="col-6 text-center">
+                    <button @click="editArticle(article)"
+                    class="btn btn-warning mb-2">編集</button>
+                </div>
+                <div class="col-6  text-center">
+                    <button @click="deleteArticle(article.id)"
+                    class="btn btn-danger">削除</button>
+                </div>
+            </div>
         </div>
         <nav aria-label="Page navigation example">
             <ul class="pagination">
