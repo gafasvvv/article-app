@@ -20,6 +20,7 @@ class Article extends Resource
             'id' => $this->id,
             'title' => $this->title,
             'body' => $this->body,
+            'live_url' => $this->live_url
         ];
     }
 

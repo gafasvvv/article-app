@@ -1809,6 +1809,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1816,7 +1821,8 @@ __webpack_require__.r(__webpack_exports__);
       article: {
         id: '',
         title: '',
-        body: ''
+        body: '',
+        live_url: ''
       },
       article_id: '',
       pagination: {},
@@ -1884,6 +1890,7 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (data) {
           _this3.article.title = '';
           _this3.article.body = '';
+          _this3.article.live_url = '';
           alert('投稿完了！');
 
           _this3.fetchArticles();
@@ -32372,7 +32379,10 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text", placeholder: "ライブタイトル" },
+              attrs: {
+                type: "text",
+                placeholder: "ライブタイトルについて入力してください"
+              },
               domProps: { value: _vm.article.title },
               on: {
                 input: function($event) {
@@ -32396,7 +32406,10 @@ var render = function() {
                 }
               ],
               staticClass: "form-control",
-              attrs: { type: "text", placeholder: "ライブ内容" },
+              attrs: {
+                type: "text",
+                placeholder: "ライブ内容について入力してください"
+              },
               domProps: { value: _vm.article.body },
               on: {
                 input: function($event) {
@@ -32404,6 +32417,33 @@ var render = function() {
                     return
                   }
                   _vm.$set(_vm.article, "body", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.article.live_url,
+                  expression: "article.live_url"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                placeholder: "ライブURLがあれば入力してください"
+              },
+              domProps: { value: _vm.article.live_url },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.article, "live_url", $event.target.value)
                 }
               }
             })
@@ -32430,6 +32470,8 @@ var render = function() {
             _c("h3", [_vm._v(_vm._s(article.title))]),
             _vm._v(" "),
             _c("p", [_vm._v(_vm._s(article.body))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(article.live_url))]),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),

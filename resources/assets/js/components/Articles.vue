@@ -3,12 +3,16 @@
         <h2 class="text-center">新規登録</h2>
         <form @submit.prevent="addArticle" class="mb-3">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="ライブタイトル"
+                <input type="text" class="form-control" placeholder="ライブタイトルについて入力してください"
                 v-model="article.title">
             </div>
             <div class="form-group">
-                <textarea type="text" class="form-control" placeholder="ライブ内容"
+                <textarea type="text" class="form-control" placeholder="ライブ内容について入力してください"
                 v-model="article.body"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="ライブURLがあれば入力してください"
+                v-model="article.live_url">
             </div>
             <button type="submit" class="btn btn-light btn-block">投稿</button>
         </form>
@@ -16,6 +20,7 @@
         <div class="card card-body mb-2" v-for="article in articles" v-bind:key="article.id">
             <h3>{{ article.title }}</h3>
             <p>{{ article.body }}</p>
+            <p>{{ article.live_url }}</p>
             <hr>
             <div class="row">
                 <div class="col-6 text-center">
@@ -54,7 +59,8 @@ export default {
             article: {
                 id: '',
                 title: '',
-                body: ''
+                body: '',
+                live_url: ''
             },
             article_id:'',
             pagination: {},
@@ -116,6 +122,7 @@ export default {
                     .then(data => {
                         this.article.title = '';
                         this.article.body = '';
+                        this.article.live_url = '';
                         alert('投稿完了！');
                         this.fetchArticles();
                     })
