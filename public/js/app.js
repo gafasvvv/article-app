@@ -1910,6 +1910,7 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (data) {
           _this3.article.title = '';
           _this3.article.body = '';
+          _this3.article.live_url = '';
           alert('更新完了！');
 
           _this3.fetchArticles();
@@ -1924,6 +1925,7 @@ __webpack_require__.r(__webpack_exports__);
       this.article.article_id = article.id;
       this.article.title = article.title;
       this.article.body = article.body;
+      this.article.live_url = article.live_url;
     }
   }
 });

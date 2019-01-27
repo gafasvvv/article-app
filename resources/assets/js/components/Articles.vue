@@ -140,6 +140,7 @@ export default {
                     .then(data => {
                         this.article.title = '';
                         this.article.body = '';
+                        this.article.live_url = '';
                         alert('更新完了！');
                         this.fetchArticles();
                     })
@@ -152,6 +153,7 @@ export default {
             this.article.article_id = article.id;
             this.article.title = article.title;
             this.article.body = article.body;
+            this.article.live_url = article.live_url;
         }
     }
 }

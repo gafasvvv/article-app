@@ -47,7 +47,7 @@ class ArticleController extends Controller
         $article->title = $request->input('title');
         $article->body = $request->input('body');
         $article->live_url = $request->input('live_url');
-        logger($article);
+        
         if($article->save()){
             return new ArticleResource($article);
         }
